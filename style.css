@@ -23,7 +23,6 @@ h1 {
     margin: 30px auto;
     overflow: hidden;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     transform: translateX(-10px); /* Moved further to the left */
 }
@@ -70,23 +69,38 @@ h1 {
 }
 
 .contenido {
-    max-width: 350px;
+    max-width: 90%; /* Adjusted for responsiveness */
     background: #fff0f5;
-    padding: 10px; /* Reduced padding to decrease height */
+    padding: 10px;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 20px auto; /* Added margin to move the div further down */
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transform: translateX(10px);
 }
+
+.grid-item.carta {
+    padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+    .contenido {
+        max-width: 350px; /* Original size for larger screens */
+    }
+
+    .grid-item.carta {
+        padding-right: 30px; /* Adjust padding for larger screens */
+    }
+}
+
 .contenido h2 {
     font-size: 1.5em;
     color: #ff3366;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduced margin to bring h2 closer to p */
 }
 
 .contenido p {
@@ -96,7 +110,7 @@ h1 {
 }
 
 .video-container {
-    max-width: 320px;
+    max-width: 100%;
     margin: 20px auto;
     text-align: center;
     transform: translateX(0); /* Adjusted to align to the left */
@@ -104,9 +118,20 @@ h1 {
 
 .elegant-video {
     width: 100%;
+    max-width: 320px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     autoplay: true; /* Ensure autoplay */
     muted: true; /* Mute video for autoplay on mobile */
     playsinline: true; /* Allow inline playback on iPhone */
+}
+
+@media (min-width: 768px) {
+    .video-container {
+        max-width: 640px; /* Larger size for bigger screens */
+    }
+
+    .elegant-video {
+        max-width: 640px;
+    }
 }
