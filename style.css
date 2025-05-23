@@ -14,52 +14,10 @@ body {
     color: #e91e63;
   }
   
-  .carta {
-    width: 90%;
-    max-width: 500px;
-    margin: 40px auto;
-    perspective: 1000px;
-    cursor: pointer;
-  }
-  
-  .carta .frente, .carta .contenido {
-    width: 100%;
-    backface-visibility: hidden;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: transform 1s;
-    padding: 20px;
-    position: absolute;
-    background-color: #fff0f6;
-    text-align: center;
-  }
-  
-  .carta .frente {
-    z-index: 2;
-    transform: rotateY(0deg);
-    color: #ad1457;
-    font-size: 20px;
-  }
-  
-  .carta .contenido {
-    transform: rotateY(180deg);
-    color: #880e4f;
-    font-family: 'Georgia', serif;
-    font-size: 18px;
-    line-height: 1.5;
-  }
-  
-  .carta.abierta .frente {
-    transform: rotateY(180deg);
-  }
-  
-  .carta.abierta .contenido {
-    transform: rotateY(0deg);
-  }
-  
-  .carta {
-    position: relative;
-    height: 250px;
+  #carta, .grid-item, .carta {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
   }
   
   
@@ -121,29 +79,54 @@ body {
   }
     
   
-  .contenido {
-    max-width: 600px;
-    background: #fff0f5;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
+.contenido {
+  max-width: 600px;
+  background: #fff0f5;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
 
 .contenido h2 {
-    font-size: 1.5em; /* Reduced font size */
+    font-size: 1.5em; 
     color: #ff3366;
     margin-bottom: 20px;
 }
 
 .contenido p {
-    font-size: 1em; /* Reduced font size */
+    font-size: 1em; 
     line-height: 1.6;
     color: #444;
 }
   
-
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .grid-item {
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff0f5;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Layout para pantallas grandes */
+  @media screen and (min-width: 900px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .carta, .slider, .video-container {
+      height: 100%;
+    }
+  }
+  
 
  
   
